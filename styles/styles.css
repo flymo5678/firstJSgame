@@ -8,7 +8,7 @@
 
 @keyframes block {
     0%{left: 500px;}
-    100%{left: -20px;}
+    100%{left: -50px;}
 }
 
 #game {
@@ -34,9 +34,14 @@
     background-color: #20262E;
     top: 380px;
     left: 450px;
-    animation: block 1s infinite linear;
 }
 
-.animate {
+
+
+.jump {
     animation: jump 500ms linear;
+}
+
+.blockmove {
+    animation: block 1s infinite linear;
 }
