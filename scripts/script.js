@@ -52,4 +52,4 @@ function checkDead() {
     }
 }
 
-setInterval(checkDead, 10);
+setInterval(checkDead, 10)
