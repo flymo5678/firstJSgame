@@ -1,6 +1,6 @@
 var text = "Score: ";
 var scoring = 0;
-var score = -1;
+var score = 0;
 var scoreCounter = document.getElementById("currentScore");
 
 var startButton = document.getElementById("startButton");
@@ -39,8 +39,6 @@ function jump() {
 function removeJump() {
     character.classList.remove("jump");
 }
-
-
 
 var block = document.getElementById("block");
 function checkDead() {
