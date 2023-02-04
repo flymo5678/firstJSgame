@@ -56,8 +56,15 @@
     align-items: center;
 }
 
+.score {
+    position: absolute;
+    margin-left: 20px;
+    font-family: 'Itim', cursive;
+}
+
 .dead {
     font-size: 300%;
+    font-family: 'Itim', cursive;
     background-color: #D61355;
     border-radius: 10%;
     line-height: 200%;
@@ -70,7 +77,7 @@
     -webkit-border-radius: 15;
     -moz-border-radius: 15;
     border-radius: 15px;
-    font-family: Arial;
+    font-family: 'Itim', cursive;
     color: #ffffff;
     font-size: 20px;
     background: #645CBB;

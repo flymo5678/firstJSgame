@@ -1,12 +1,27 @@
+var text = "Score: ";
+var scoring = 0;
+var score = -1;
+var scoreCounter = document.getElementById("currentScore");
+
 var startButton = document.getElementById("startButton");
 startButton.addEventListener("click", startGame);
+setTimeout(startScoring, 1000);
 
-var death = document.getElementById("death")
-death.classList.add("hidden")
+var death = document.getElementById("death");
+death.classList.add("hidden");
 
 function startGame() {
     startButton.classList.add("hidden");
-    setTimeout(sprites, 1000)
+    setTimeout(sprites, 1000);
+}
+
+function startScoring() {
+    scoring = setInterval(displayScore, 1000);
+}
+
+function displayScore() {
+    score += 1;
+    scoreCounter.innerText = text.concat(score);
 }
 
 function sprites() {
@@ -22,7 +37,7 @@ function jump() {
 }
 
 function removeJump() {
-    character.classList.remove("jump")
+    character.classList.remove("jump");
 }
 
 
@@ -32,10 +47,11 @@ function checkDead() {
     let characterTop = parseInt(window.getComputedStyle(character).getPropertyValue("top"));
     let blockLeft = parseInt(window.getComputedStyle(block).getPropertyValue("left"));
     if (blockLeft < 50 && blockLeft > -50 && characterTop >= 380) {
-        document.removeEventListener("click", jump)
-        block.classList.remove("blockmove")
-        death.classList.remove("hidden")
+        clearInterval(scoring);
+        document.removeEventListener("click", jump);
+        block.classList.remove("blockmove");
+        death.classList.remove("hidden");
     }
 }
 
-setInterval(checkDead, 10)
+setInterval(checkDead, 10);
