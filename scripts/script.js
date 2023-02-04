@@ -1,5 +1,5 @@
 var text = "Score: ";
-var interval
+var scoring = 0;
 var score = 0;
 var scoreCounter = document.getElementById("currentScore");
 
@@ -12,14 +12,16 @@ death.classList.add("hidden");
 function startGame() {
     startButton.classList.add("hidden");
     setTimeout(sprites, 1000);
+    setTimeout(startScoring, 1000);
 }
 
-function scoring() {
-    let blockLeft1 = parseInt(window.getComputedStyle(block).getPropertyValue("left"));
-    if (blockLeft1 < 0 && blockLeft1 > -50) {
-        score += 1;
-        scoreCounter.innerText = text.concat(score);
-    }
+function startScoring() {
+    scoring = setInterval(displayScore, 1000);
+}
+
+function displayScore() {
+    score += 1;
+    scoreCounter.innerText = text.concat(score);
 }
 
 function sprites() {
