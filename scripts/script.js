@@ -1,5 +1,6 @@
 var text = "Score: ";
-var scoring = 0;
+var scoring
+var scoreEnabled = true
 var score = 0;
 var scoreCounter = document.getElementById("currentScore");
 
@@ -12,16 +13,18 @@ death.classList.add("hidden");
 function startGame() {
     startButton.classList.add("hidden");
     setTimeout(sprites, 1000);
-    setTimeout(startScoring, 1000);
-}
-
-function startScoring() {
-    scoring = setInterval(displayScore, 1000);
+    scoring = setInterval(displayScore, 10)
 }
 
 function displayScore() {
-    score += 1;
-    scoreCounter.innerText = text.concat(score);
+    let blockLeft = parseInt(window.getComputedStyle(block).getPropertyValue("left"));
+    if (blockLeft < 0 && scoreEnabled == true) {
+        scoreEnabled = false
+        score += 1;
+        scoreCounter.innerText = text.concat(score);
+    } else if (blockLeft > 0 && scoreEnabled == false) {
+        scoreEnabled = true
+    }
 }
 
 function sprites() {
@@ -45,7 +48,7 @@ function checkDead() {
     let characterTop = parseInt(window.getComputedStyle(character).getPropertyValue("top"));
     let blockLeft = parseInt(window.getComputedStyle(block).getPropertyValue("left"));
     if (blockLeft < 50 && blockLeft > -50 && characterTop >= 380) {
-        clearInterval(scoring);
+        clearInterval(scoring)
         document.removeEventListener("click", jump);
         block.classList.remove("blockmove");
         death.classList.remove("hidden");
