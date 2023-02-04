@@ -5,7 +5,6 @@ var scoreCounter = document.getElementById("currentScore");
 
 var startButton = document.getElementById("startButton");
 startButton.addEventListener("click", startGame);
-setTimeout(startScoring, 1000);
 
 var death = document.getElementById("death");
 death.classList.add("hidden");
@@ -13,6 +12,7 @@ death.classList.add("hidden");
 function startGame() {
     startButton.classList.add("hidden");
     setTimeout(sprites, 1000);
+    setTimeout(startScoring, 1000);
 }
 
 function startScoring() {
