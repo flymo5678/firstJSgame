@@ -17,6 +17,7 @@
     border: 1px solid black;
     margin: auto;
     background-color: #C3ACD0;
+    position: relative;
 }
 
 #character {
@@ -44,4 +45,46 @@
 
 .blockmove {
     animation: block 1s infinite linear;
+}
+
+.centre {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dead {
+    font-size: 300%;
+    background-color: #D61355;
+    border-radius: 10%;
+    line-height: 200%;
+    padding-left: 5%;
+    padding-right: 5%;
+    color: #ffffff;
+}
+
+.btn {
+    -webkit-border-radius: 15;
+    -moz-border-radius: 15;
+    border-radius: 15px;
+    font-family: Arial;
+    color: #ffffff;
+    font-size: 20px;
+    background: #645CBB;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+    border-style: none;
+  }
+  
+  .btn:hover {
+    background: #A084DC;
+    border-style: none;
+    text-decoration: none;
+  }
+
+.hidden {
+    display: none;
 }
