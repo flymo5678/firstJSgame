@@ -1,14 +1,19 @@
 @keyframes jump {
     0%{top: 430px;}
-    30%{top: 330px;}
-    55%{top: 300px}
-    70%{top: 330px;}
+    40%{top: 330px;}
+    50%{top: 300px;}
+    60%{top: 330px;}
     100%{top: 430px;}
 }
 
 @keyframes block {
     0%{left: 500px;}
     100%{left: -50px;}
+}
+
+:root {
+    --blockSpeed: ;
+    --jumpLength: ;
 }
 
 #game {
@@ -37,14 +42,12 @@
     left: 450px;
 }
 
-
-
 .jump {
-    animation: jump 500ms linear;
+    animation: jump var(--jumpLength) linear;
 }
 
 .blockmove {
-    animation: block 1s infinite linear;
+    animation: block var(--blockSpeed) linear infinite;
 }
 
 .centre {
